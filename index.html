@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<!--[if IE 7 ]><html class="ie ie7 lte9 lte8 lte7" lang="en-US"><![endif]-->
+<!--[if IE 8]><html class="ie ie8 lte9 lte8" lang="en-US">	<![endif]-->
+<!--[if IE 9]><html class="ie ie9 lte9" lang="en-US"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="noIE" lang="en-US" ng-app="mod">
+<!--<![endif]-->
+	<head>
+		<title>MyFilms</title>
+
+		<!-- meta -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no"/>
+
+		<!-- google fonts -->
+		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans'>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold"/>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+Sans:regular,italic,bold,bolditalic"/>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nixie+One:regular,italic,bold,bolditalic"/>
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+SC:regular,italic,bold,bolditalic"/>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+		<script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+		<script type="text/javascript" src="assets/js/app.js"></script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js">
+		</script>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- css -->
+		<!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/style.css" media="screen"/>
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.js"></script>
+			<script src="assets/js/respond.js"></script>
+		<![endif]-->
+
+		<!--[if IE 8]>
+	    	<script src="assets/js/selectivizr.js"></script>
+	    <![endif]-->
+	</head>
+
+	<body ng-controller="ctrl">
+		<div id="drawer-right">
+			<div class="cross text-right">
+				<a class="toggleDrawer" href="#"><i class="fa fa-times-circle fa-2x"></i></a>
+			</div>
+			<h2>Navigate</h2>
+			<nav>
+				<ul class="nav nav-pills nav-stacked">
+					<li>
+						<a href="#wrapper"><i class="fa fa-home"></i> Home</a>
+					</li>
+					<li>
+						<a href="#admin"><i class="fa fa-user-secret"></i> Admin</a>
+					</li>
+					<li>
+						<a href="#project" id="btn-1" data-toggle="collapse" data-target="#submenu1" aria-expanded="false"><i class="fa fa-bookmark"></i> Project</a>
+						<ul class="nav nav-pills nav-stacked collapse" id="submenu1" role="menu" aria-labelledby="btn-1">
+							<li><a href="#project"><i class="fa fa-search-plus" aria-hidden="true"></i>
+							Advanced Search</a></li>
+							<li><a href="#project"><i class="fa fa-plus" aria-hidden="true"></i>
+							Add Project</a></li>
+							<li><a href="#project"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							Edit Project</a></li>
+						</ul>
+					</li>
+
+					<li>
+						<a href="#services"><i class="fa fa-cogs" aria-hidden="true"></i> Services</a>
+					</li>
+					<li>
+						<a href="#user"><i class="fa fa-address-card" aria-hidden="true"></i> User</a>
+					</li>
+
+					<li>
+						<a href="#parallax" id="btn-2" data-toggle="collapse" data-target="#submenu2" aria-expanded="false"><i class="fa fa-users"></i> Clients</a>
+						<ul class="nav nav-pills nav-stacked collapse" id="submenu2" role="menu" aria-labelledby="btn-2">
+							<li><a href="#parallax"><i class="fa fa-search-plus" aria-hidden="true"></i>
+							Advanced Search</a></li>
+							<li><a href="#parallax"><i class="fa fa-search" aria-hidden="true"></i>
+							Company Search</a></li>
+							<li><a href="#parallax" ng-click="addC()"><i class="fa fa-user-plus" aria-hidden="true"></i>
+							Add Client</a></li>
+							<li><a href="#parallax" ng-click="addC()"><i class="fa fa-plus" aria-hidden="true"></i>
+							Add Company</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#staffs"><i class="fa fa-thumbs-up"></i> Staff</a>
+					</li>
+					<li>
+						<a href="#contact"><i class="fa fa-phone-square"></i> Contact</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="social">
+				<h2>Stay Connected</h2>
+				<ul>
+					<li><a href=""><i class="fa fa-facebook-square fa-3x"></i></a></li>
+					<li><a href=""><i class="fa fa-twitter-square fa-3x"></i></a></li>
+					<li><a href=""><i class="fa fa-tumblr-square fa-3x"></i></a></li>
+					<li><a href=""><i class="fa fa-google-plus-square fa-3x"></i></a></li>
+				</ul>
+			</div>
+		</div><!-- #drawer-right -->
+
+		<div id="wrapper">
+			<div id="header" class="content-block header-wrapper">
+				<div class="background-wrap">
+					<video id="video-bg" preload="auto" autoplay="true" loop="loop" muted="muted">
+						<source src="assets/video/ParisColorReel.mp4" type="video/mp4">
+					</video>
+				</div>
+
+				<div class="header-wrapper-inner">
+
+					<section class="top clearfix">
+						<div class="pull-left">
+							<h1><a class="logo" href="#" target="_blank">MyFilm</a></h1>
+						</div>
+						<div class="pull-right">
+							<a class="toggleDrawer" href="#"><i class="fa fa-bars fa-2x"></i></a>
+						</div>
+					</section>
+					<section class="center">
+						<div class="slogan">
+							ANIMATION &amp; COLORS
+						</div>
+						<div class="secondary-slogan">
+							By Aditya Wagholikar
+						</div>
+					</section>
+					<section class="bottom">
+						<a id="scrollToContent" href="#">
+							<img src="assets/images/black.png">
+						</a>
+					</section>
+				</div>
+
+			</div><!-- header -->
+
+			<div class="content-block parallax" id="admin">
+				<div class="container text-center">
+					<header class="block-heading cleafix">
+						<h1>Admin</h1>
+						<p>A little about me</p>
+					</header>
+					<section class="block-body">
+						<div class="row">
+
+							<div id="contentadmin">
+							<p>Hey! Thanks for stopping by. <br> I'm a Management Information Systems Graduate <br>and Seeking Full-Time Job opportunity <br>in Web Development and Front-end Development.<br> This is a small prototype of my work. <br> Hope you enjoy it.</p>
+							<h3>Aditya Wagholikar</h3>
+							<p>Contact: +1 (979) 264 -0764</p>
+							<p>Email: waditya02@gmail.com</p>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div><!-- #Admin -->
+
+			<div class="content-block" id="project">
+				<div class="container">
+					<header class="block-heading cleafix">
+						<a href="#/project" class="btn btn-o btn-lg pull-right">View All</a>
+						<h1>Our Latest Projects</h1>
+						<p>Take a look at some of our recent works</p>
+					</header>
+					<section class="block-body">
+						<div class="row">
+							<div class="col-sm-4">
+								<a href="#/project" class="recent-work" style="background-image:url(assets/images/petedragon.jpg)">
+									<span class="btn btn-o-white" id="inputz">Pete's Dragon<br>
+									VFX</span>
+								</a>
+							</div>
+							<div class="col-sm-4">
+								<a href="#/project" class="recent-work" style="background-image:url(assets/images/despicableme.jpg)">
+									<span class="btn btn-o-white" id="inputz">Despicable Me<br>
+									Colorist Reel</span>
+								</a>
+							</div>
+							<div class="col-sm-4">
+								<a href="#/project" class="recent-work" style="background-image:url(assets/images/avengers2.jpg)">
+									<span class="btn btn-o-white" id="inputz">Avengers<br>
+									Colorist Reel</span>
+								</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-4">
+								<a href="#/project" class="recent-work" style="background-image:url(assets/images/star.jpg)">
+									<span class="btn btn-o-white" id="inputz">Star Trek Beyond<br>
+									Color & VFX</span>
+								</a>
+							</div>
+							<div class="col-sm-4">
+								<a href="#/project" class="recent-work" style="background-image:url(assets/images/tangled.jpg)">
+									<span class="btn btn-o-white" id="inputz">Tangled<br>
+									VFX</span>
+								</a>
+							</div>
+							<div class="col-sm-4">
+								<a href="#/project" class="recent-work" style="background-image:url(assets/images/sing.jpg)">
+									<span class="btn btn-o-white" id="inputz">Sing<br>
+									Colorist Reel</span>
+								</a>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div><!-- #projects -->
+
+			<div class="content-block parallax" id="services">
+				<div class="container text-center">
+					<header class="block-heading cleafix">
+						<h1>Our Services</h1>
+						<p>Awesome services we provide</p>
+					</header>
+					<section class="block-body">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="service">
+									<i class="fa fa-film"></i>
+									<h2>Film Scanning</h2>
+									<p>MyFilm offers a full range of high quality film scanning services to most all digital formats, image size or resolution.<br>
+									Great looking digital images require superior scans with optimized resolution, color fidelity, low noise and stability. Here at MyFilm we take advantage of the finest digital hardware and enhance the process with proprietary software.<p>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="service">
+									<i class="fa fa-video-camera"></i>
+									<h2>Video Services</h2>
+									<p>MyFilm’s digital video services are among the most technically advanced in the industry. We deliver the finest quality video masters from high resolution digital intermediates and include UHD, HD and SD masters as well as digital cinema masters. We also handle electronically captured product including editorial, color timing and master duplication</p>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="service">
+									<i class="fa fa-picture-o"></i>
+									<h2>Image Science</h2>
+									<p>MyFilm’s history of Image Science runs deep. From color mapping standard definition images for film negative to the final delivery of Digital Cinema masters, our solutions for color are endless. MyFilm has an unparalleled ability to take images from the source to final destination maintaining the image color and quality as intended.</p>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div><!-- #services -->
+
+
+			<div class="content-block" id="user">
+				<div class="container text-center">
+					<header class="block-heading cleafix">
+						<h1>Our Users</h1>
+						<p>Who has wonderful access to our system</p>
+					</header>
+					<section class="block-body">
+							<div class="row">
+								<div class="input-group col-4">
+									<input type="text" ng-model="searchUser.name" class="form-control" id="inputz" placeholder="Search by name"></br>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+								</div>
+							</div>
+							<br>
+							<table class="table table-hover">
+								<thead class="thead-inverse">
+							      <tr>
+							        <th>User Name</th>
+							        <th>Contact</th>
+							      </tr>
+								</thead>
+								<tbody ng-repeat="user in userDetails | filter: searchUser">
+									<tr>
+										<td>
+											<i class="glyphicon glyphicon-user"></i> {{user.name}}
+										</td>
+										<td>
+											<i class="glyphicon glyphicon-earphone"></i> {{user.contact}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<a class="btn btn-o" ng-click="add()"><i class="fa fa-user-plus" aria-hidden="true"></i> Add User</a>
+							<hr>
+
+							<form ng-show="valuser">
+								<div class="row">
+									<div class="input-group col-4">
+										<input type="text" ng-model="name" class="form-control" id="inputz" placeholder="Name"><br>
+										<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									</div><br>
+									<div class="input-group col-4">
+										<input type="text" ng-model="phone" class="form-control" id="inputz" placeholder="Contact"><br>
+										<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+									</div>
+								</div>
+								<br>
+								<a class="btn btn-o" ng-click="save()" ng-disabled={{newUser.$invalid}}><i class="fa fa-floppy-o" aria-hidden="true"></i> Save</a>
+							</form>
+					</section>
+				</div>
+			</div><!-- #user -->
+
+
+			<div class="content-block parallax" id="parallax">
+				<div class="container text-center">
+					<header class="block-heading cleafix">
+						<h1>Our Clients</h1>
+						<p>Who admires our work</p>
+					</header>
+					<div class="row" id="crow">
+						<div class="input-group col-4">
+							<input type="text" ng-model="searchClient.name" class="form-control form-control-white" id="inputz" placeholder="Search by name"><br>
+							<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+						</div>
+					</div>
+					<br>
+
+					<table class="table">
+						<thead>
+						  <tr>
+							<th align="center">Client Name</th>
+							<th>Company Name</th>
+							<th>Contact</th>
+						  </tr>
+						</thead>
+						<tbody ng-repeat="client in clientDetails | filter: searchClient">
+							<tr>
+								<td>
+									<i class="glyphicon glyphicon-user"></i> {{client.name}}
+								</td>
+								<td>
+									<i class="glyphicon glyphicon-briefcase"></i> {{client.company}}
+								</td>
+								<td>
+									<i class="glyphicon glyphicon-earphone"></i> {{client.contact}}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<button id="cbutn" class="btn btn-o-white" ng-click="addC()"><i class="fa fa-user-plus" aria-hidden="true"></i>
+					Add Client</button>
+					<form ng-show="val" id="addform">
+						<div class="row">
+							<div class="input-group col-4">
+								<input type="text" ng-model="cName" class="form-control form-control-white" id="inputz" placeholder="Your Name"><br>
+								<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							</div><br>
+							<div class="input-group col-4">
+								<input type="text" ng-model="cCompany" class="form-control form-control-white" id="inputz" placeholder="Company Name"><br>
+								<span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
+							</div><br>
+							<div class="input-group col-4">
+								<input type="text" ng-model="cPhone" class="form-control form-control-white" id="inputz" placeholder="Contact Number"><br>
+								<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+							</div>
+						</div>
+						<br>
+						<button class="btn btn-o-white" ng-click="saveClient()"><i class="fa fa-floppy-o" aria-hidden="true"></i>
+						Save</button>
+					</form>
+				</div>
+			</div><!-- #parallax -->
+
+			<div class="content-block" id="staffs">
+				<div class="container">
+					<header class="block-heading cleafix">
+						<h1>Our Staff</h1>
+						<p>Creativity comes from within</p>
+					</header>
+					<section class="block-body">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="staff">
+									<img src="assets/images/flynn1.jpg">
+									<p>Flynn has been a member of the MyFilm Team since 2001. Since then, he has worked on over 70 Digital Intermediate projects, including the very first full length DI, We Were Soldiers.<br>As an award winning director and producer of feature length documentaries, he has a strong appreciation for the movie making process.</p>
+									<strong>FLYNN</strong><br/>
+									<span>CINEMASCAN DAILIES COLORIST</span>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="staff">
+									<img src="assets/images/anna.jpg">
+									<p>Upon seeing her first film from the French New Wave a nine years old, Anna was swept up into the world of film. Today Anna’s passion remains undiminished. <br>A senior digital colorist at MyFilm, she has worked on almost 80 features and has received four HPA nominations for her work in feature film color-correction.</p>
+									<strong>ANNA</strong><br/>
+									<span>SENIOR DIGITAL COLORIST</span>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="staff">
+									<img src="assets/images/Kristoff.jpg">
+									<p>Kristoff has over 12 years of experience in color grading, editing and visual effects for feature films and theatrical trailers. He brings enthusiasm, creativity, and a perfectionist's eye to every project he works on. <br>Recent projects include the feature length 3D animations The Lorax and Despicable Me , as well as several high-profile trailer campaigns, including The Avengers and The Twilight Saga series.<p>
+									<strong>KRISTOFF</strong><br/>
+									<span>COLORIST</span>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div><!-- /#staffs -->
+
+			<div class="content-block" id="contact">
+				<div class="container text-center">
+					<header class="block-heading cleafix">
+						<h1>Contact Us</h1>
+						<p>Feel free to drop us a line</p>
+					</header>
+					<section class="block-body">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3">
+								<form class="" role="form">
+									<div class="form-group">
+								    	<input type="email" class="form-control form-control-white" id="subject" placeholder="Your Name" required>
+								  	</div>
+								    <div class="form-group">
+								    	<input type="email" class="form-control form-control-white" id="exampleInputEmail2" placeholder="Enter email" required>
+								    </div>
+								    <div class="form-group">
+								    	<textarea class="form-control form-control-white" placeholder="Write Something" required></textarea>
+								    </div>
+								  <input type="submit" class="btn btn-o-white" value="Say Hello">
+								</form>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div><!-- #contact -->
+
+			<div class="content-block" id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-sm-6 col-xs-5">
+							&copy; 2017 MyFilm &nbsp;
+							|&nbsp;
+					        <a class="external-link" href="#" target="_blank">
+					      	 <span> Privacy Policy</span>
+					        </a>&nbsp;|&nbsp;
+
+					      	<a class="external-link" href="#" target="_blank"><span> Terms of Use</span></a>
+						</div>
+						<div class="col-xs-6 text-right">Webpage By- <a href="https://www.linkedin.com/in/aditya-wagholikar-98362916/" target="_blank">Aditya Wagholikar</a></div>
+					</div>
+				</div>
+			</div><!-- #footer -->
+
+
+		</div><!--/#wrapper-->
+
+		<script src="assets/js/jquery-2.1.3.min.js"></script>
+		<script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/jquery.actual.min.js"></script>
+		<script src="assets/js/jquery.scrollTo.min.js"></script>
+		<script src="assets/js/script.js"></script>
+
+	</body>
+</html>
