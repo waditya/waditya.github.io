@@ -1,0 +1,529 @@
+/**
+* Table of Contents:
+*
+* 01.0 - Global
+* 02.0 - Header
+* 03.0 - Drawer with menu
+* 04.0 - Parallax styles
+* 05.0 - Recent works
+* 06.0 - Services
+* 07.0 - User
+* 08.0 - Staff
+* 09.0 - Contact
+* 10.0 - Footer
+* 11.0 - Responsive styles
+* -----------------------------------------------------------------------------
+*/
+
+
+/* /////////////////////////////////////////////////////////////////////
+//  01 - Global
+/////////////////////////////////////////////////////////////////////*/
+
+* {outline: none !important;}
+
+::selection {
+	background-color: #475B6F;
+	color: #fff;
+}
+
+html {
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	overflow-y: scroll;
+}
+
+body {
+	color: #6a6a6a;
+	background: #f1f0f0;
+}
+
+p {margin: 0 0 20px 0;	}
+
+img {max-width: 100%;}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+
+a{
+	color: #4da7ca;
+	-o-transition: all .4s;
+	-ms-transition: all .4s;
+	-moz-transition: all .4s;
+	-webkit-transition: all .4s;
+	transition: all .4s;
+}
+
+a:hover {
+	color: #4290ae;
+}
+
+
+h1, h2, h3, h4, h5, h6{
+	margin: 0 0 15px 0;
+	color: #3A4F52;
+	font-family: 'Alegreya Sans';
+}
+
+.btn{border-radius: 0;}
+.btn-o {
+    border: 1px solid #3A4F52;
+    color: #3A4F52;
+}
+.btn-o:hover {
+    background: #3A4F52;
+    color: white;
+}
+.btn.btn-o-white {
+    border: 1px solid white;
+    color: white;
+    background: transparent;
+}
+.btn.btn-o-white:hover {
+    background: white;
+    color: #6a6a6a;
+}
+
+
+/*////////////////////////////////////////////////////////////////////////
+//  02 - Header
+///////////////////////////////////////////////////////////////////////*/
+#header {
+	position: relative;
+	padding: 0 !important;
+}
+
+#header.header-wrapper {
+	background: url("../images/golden.jpg") no-repeat center center;
+	background-size: cover;
+	display: table;
+	height: 100vh;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	overflow-x: hidden;
+	/*background-color: rgba(0, 0, 0, 0.6);*/
+
+}
+
+@media screen and (max-width: 767px) and (orientation: landscape) {
+    #header.header-wrapper {
+		height: auto;
+		min-height: 100vh;
+		padding: 0px;
+	}
+}
+
+.background-wrap{
+	position: absolute;
+	z-index: -1000;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+}
+
+#video-bg{
+	position: absolute;
+	top: 0;
+	left:0;
+	min-width: 100%;
+	min-height: 100%;
+	height: 100vh;
+	width: 100vw;
+	object-fit: cover;
+}
+
+#header.header-wrapper .header-wrapper-inner {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+
+	width: 100%;
+	min-height: 100%;
+	z-index: 1000;
+}
+
+#header .top {
+	position:fixed;
+	top:0;
+	width: 100%;
+	padding: 30px;
+	height: auto;
+	z-index:1000;
+	-o-transition: all .5s;
+	-ms-transition: all .5s;
+	-moz-transition: all .5s;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+
+#header .top.solid {
+	position: fixed;
+    background: #122932;
+    padding-top: 15px;
+    padding-bottom: 15px;
+	z-index: 1000;
+}
+
+#header .top h1{
+	margin-bottom: 0;
+}
+#header .top.solid .toggleDrawer i {
+    padding-top: 8px;
+}
+
+#header .logo, #header .toggleDrawer{
+	font-family: 'Alegreya SC';
+	color: white;
+}
+
+#header .slogan{
+	font-size: 4em;
+	margin-bottom: 15px;
+	line-height: 1em;
+	font-family: 'Nixie One';
+	color: black;
+	font-weight: bold;
+}
+
+#header .secondary-slogan{
+	font-size: 1.6em;
+	color: rgba(0,0,0,.9);
+	font-weight: bold;
+	/*color: black;*/
+	line-height: 1em;
+	font-family: 'Alegreya SC';
+}
+
+#header .bottom {
+    bottom: 10%;
+	display: block;
+	position: absolute;
+	width: 100%;
+	z-index: 3;
+}
+#header .bottom a img {
+    width: 50px;
+}
+#header .bottom a {
+    opacity: 0.7;
+}
+#header .bottom a:hover {
+    opacity: 1;
+}
+
+
+/*////////////////////////////////////////////////////////////////////////
+//  03 - Drawer with menu
+///////////////////////////////////////////////////////////////////////*/
+
+#drawer-right {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-right: -300px;
+    background: #122932;
+    width: 300px;
+    padding: 20px;
+    z-index: 1000;
+}
+
+#drawer-right h1, #drawer-right h2{color: white;}
+
+#drawer-right .nav-pills>li>a {
+	font-size: 18px;
+	border-radius: 0;
+}
+
+#drawer-right .social{margin-top: 30px}
+#drawer-right .social ul {
+    list-style: none;
+    padding-left: 20px;
+}
+#drawer-right .social ul > li {
+    display: inline-block;
+}
+#drawer-right .social ul > li > a:hover{
+	color: white;
+}
+
+
+
+/*////////////////////////////////////////////////////////////////////////
+//  04 - Parallax styles
+///////////////////////////////////////////////////////////////////////*/
+
+.content-block{
+	background:transparent no-repeat center center fixed;
+	-webkit-background-size:100%;
+	-moz-background-size:100%;
+	-o-background-size:100%;
+	background-size:100%;
+	background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	/*overflow: auto;*/
+	padding: 90px 0;
+	/*z-index: -1;*/
+
+}
+.parallax{
+	padding: 80px 0;
+}
+
+.block-body {
+	margin-top: 60px;
+}
+
+#services {
+	background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5)), url(../images/hollywood.jpg);
+	color: white;
+}
+#admin{
+	background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5)), url(../images/neha1.jpg);
+	color: white;
+}
+#admin h1,h3{
+	color: white;
+}
+#submenu1,#submenu2 li{
+	padding-left: 10px;
+}
+#parallax {
+	background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0, 0, 0, 0.7)), url(../images/newyork.jpg);
+	color: white;
+	overflow: hidden;
+}
+
+#contact {
+	background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0, 0, 0, 0.7)), url(../images/contactus.jpg);
+	color: white;
+	background-color: #405162;
+}
+#parallax h1{
+	color: white;
+}
+
+
+
+
+/*////////////////////////////////////////////////////////////////////////
+//  05 - Recent works
+///////////////////////////////////////////////////////////////////////*/
+
+.recent-work {
+    width: 100%;
+    padding-bottom: 27%;
+    background: #C3C9CC;
+    display: table;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 27%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.recent-work span{
+	margin-top: -18px;
+	opacity: 0;
+	position: relative;
+	z-index: 1;
+}
+.recent-work:before {
+    background: rgba(2, 56, 58, 0.7);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    opacity: 0;
+    -o-transition: all .2s;
+	-ms-transition: all .2s;
+	-moz-transition: all .2s;
+	-webkit-transition: all .2s;
+	transition: all .2s;
+}
+.recent-work:hover {
+    background-size: 200%;
+    background-position: center;
+}
+.recent-work:hover:before, .recent-work:hover span {
+    opacity: 1;
+}
+
+
+
+
+
+/*////////////////////////////////////////////////////////////////////////
+//  06 - Services
+///////////////////////////////////////////////////////////////////////*/
+
+#services h1, #services h2{
+	color: white;
+}
+.service i {
+    font-size: 60px;
+}
+.service {
+    padding: 0 25px;
+}
+
+
+
+/*////////////////////////////////////////////////////////////////////////
+//  08 - Staff
+///////////////////////////////////////////////////////////////////////*/
+
+
+#staffs{
+	text-align: center;
+}
+#staffs .staff > img {
+    border-radius: 100%;
+    margin-bottom: 15px;
+}
+#staffs .staff {
+	padding: 25px;
+}
+
+
+/*////////////////////////////////////////////////////////////////////////
+//  09 - Contact
+///////////////////////////////////////////////////////////////////////*/
+
+
+#contact{
+	color: white;
+}
+#contact h1{color: white}
+
+.form-control-white {
+    background: transparent;
+    color: white;
+}
+
+.form-control-white::-webkit-input-placeholder { /* WebKit browsers */
+    color:    white;
+}
+.form-control-white:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    white;
+    opacity:  1;
+}
+.form-control-white::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    white;
+    opacity:  1;
+}
+.form-control-white:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    white;
+}
+
+
+/*////////////////////////////////////////////////////////////////////////
+//  10 - Footer
+///////////////////////////////////////////////////////////////////////*/
+
+
+#footer{
+	 background: #122932;
+	 color: white;
+ }
+
+ #footer a:hover{
+	 color:white;
+ }
+ #footer a{
+	 color: white;
+ }
+
+
+
+/*////////////////////////////////////////////////////////////////////////
+//  11 - Responsive styles
+///////////////////////////////////////////////////////////////////////*/
+
+
+@media (max-width: 767px){
+	#header .slogan {
+		font-size: 2.8em;
+	}
+
+	#header .secondary-slogan {
+		font-size: 1.2em;
+	}
+
+	#header .bottom {
+		bottom: 13%;
+	}
+
+	.blog-post {
+		margin-bottom: 40px;
+	}
+
+	.recent-work {
+		background-position: center;
+	}
+
+	.recent-work:before {
+		opacity: 1;
+	}
+
+	.recent-work span {
+		opacity: 1;
+	}
+}
+
+@media (max-width: 480px) {
+	#drawer-right {
+		padding: 10px 20px;
+	}
+
+	#drawer-right .nav-pills>li>a {
+		font-size: 17px;
+	}
+
+	.nav-stacked>li+li {
+		margin-top: 0;
+	}
+
+	.nav>li>a {
+		padding: 8px 15px;
+	}
+
+	#drawer-right .social {
+		margin-top: 5px;
+	}
+
+	#header {
+		background-size: cover;
+	}
+}
+
+
+#crow, #addform{
+		padding: 40px 40px 0px 40px;
+	}
+
+.table th, td {
+   text-align: center;
+}
+
+#ctable{
+	padding: 0 40px;
+}
+
+#inputz{
+	z-index: 0;
+}
