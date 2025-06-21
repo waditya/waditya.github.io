@@ -32,5 +32,5 @@ I'm passionate about building intelligent infrastructure solutions that scale. W
 ---
 
 ## 📫 Connect with Me
-[LinkedIn](https://linkedin.com/in/awagholikar) | [Resume](https://yourlink) | [Email](mailto:waditya02@gmail.com)
+[LinkedIn](https://linkedin.com/in/awagholikar) | [Resume](https://drive.google.com/file/d/1OleSY4yhh1URLUpz3RM1jt3ZCFbbJnGc/view?usp=sharing) | [Email](mailto:waditya02@gmail.com)
 
